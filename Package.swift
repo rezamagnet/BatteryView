@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -12,7 +12,8 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "BatteryView", dependencies: [], path: "Sources")
-    ],
-    swiftLanguageVersions: [.v5]
+        .target(name: "BatteryView",
+                resources: [.process("Resources")]
+               )
+    ]
 )

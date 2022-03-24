@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,13 +39,23 @@
                                     <action selector="changeBatteryLevel:" destination="BYZ-38-t0r" eventType="valueChanged" id="siV-5Y-K4j"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umy-PK-YhH">
+                                <rect key="frame" x="16" y="611.5" width="71" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Charge"/>
+                                <connections>
+                                    <action selector="chargeButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ko-xc-EmX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Kg0-p9-8Sw" secondAttribute="trailing" constant="20" symbolic="YES" id="2d1-fr-d7U"/>
                             <constraint firstItem="Kg0-p9-8Sw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="3gh-BS-Nev"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iEh-y5-b3Q" secondAttribute="bottom" constant="20" id="Chp-Dd-o8T"/>
+                            <constraint firstItem="umy-PK-YhH" firstAttribute="centerY" secondItem="iEh-y5-b3Q" secondAttribute="centerY" id="E0g-1V-9rA"/>
                             <constraint firstItem="iEh-y5-b3Q" firstAttribute="top" secondItem="Kg0-p9-8Sw" secondAttribute="bottom" constant="16" id="p2x-0w-NLF"/>
+                            <constraint firstItem="umy-PK-YhH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sKV-eG-jkH"/>
                             <constraint firstItem="iEh-y5-b3Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zui-qd-LGW"/>
                         </constraints>
                     </view>

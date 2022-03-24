@@ -11,9 +11,12 @@ import UIKit
 class BatteryViewController: UIViewController {
     @IBOutlet var battery: BatteryView!
 
+    @IBAction func chargeButtonDidTouch(_ sender: UIButton) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bigBattery = BatteryView(frame: view.bounds.insetBy(dx: 60, dy: 120))
+        let bigBattery = BatteryView(frame: view.bounds.insetBy(dx: 60, dy: 150))
         bigBattery.gradientThreshold = 30
         view.addSubview(bigBattery)
 

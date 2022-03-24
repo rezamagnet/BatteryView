@@ -9,6 +9,7 @@ import UIKit
 
 extension Int {
     static let fullBattery = 100
+    static let charingBattery = 101
 }
 
 /// Show a battery oriented toward `direction`, charged `level` percent.
@@ -16,7 +17,11 @@ extension Int {
 @IBDesignable open class BatteryView: UIView {
     // MARK: - Behavior Properties
 
-    /// 0 to 100 percent full, unavailable = -1
+    private var thunderImageView = UIImageView(image: UIImage(named: "thunder", in: Bundle.module, compatibleWith: nil))
+    
+    public var chargeFillColor: UIColor = .blue
+
+    /// 0 to 100 percent full, unavailable = -1, charging 101
     @IBInspectable open var level: Int = -1 { didSet { layoutLevel() } }
 
     /// change color when level crosses the threshold
@@ -71,6 +76,8 @@ extension Int {
         case lowThreshold ... .fullBattery:
             let fraction = CGFloat(level - lowThreshold) / CGFloat(min(gradientThreshold, .fullBattery) - lowThreshold)
             return lowLevelColor.blend(with: highLevelColor, fraction: fraction)
+        case .charingBattery:
+            return chargeFillColor
         default:
             return noLevelColor
         }
@@ -118,6 +125,10 @@ extension Int {
         isAccessibilityElement = true
         accessibilityIdentifier = "battery"
         accessibilityLabel = "battery"
+        
+        addSubview(thunderImageView)
+        thunderImageView.tintColor = .white
+        thunderImageView.contentMode = .scaleAspectFit
     }
 
     // MARK: - Layout
@@ -156,11 +167,14 @@ extension Int {
         // layout empty levelFill
         levelFill.frame = bodyFrame.insetBy(dx: perpendicularInset, dy: perpendicularInset).integral
         levelFill.backgroundColor = noLevelColor.cgColor
+        
+        thunderImageView.frame = bounds.inset(by: .init(top: dy, left: 0, bottom: dy, right: dx + perpendicularInset))
+        
     }
 
     private func layoutLevel() {
         var levelFrame = bodyOutline.bounds.insetBy(dx: bodyOutline.borderWidth, dy: bodyOutline.borderWidth)
-        if level >= 0 && level <= .fullBattery {
+        if level >= 0 && level <= .fullBattery || level == .charingBattery {
             let levelInset = (isVertical ? levelFrame.height : levelFrame.width) * CGFloat(.fullBattery - level) / CGFloat(Int.fullBattery)
             (_, levelFrame) = levelFrame.divided(atDistance: levelInset, from: direction)
             noLevelLabel.text = nil
@@ -170,6 +184,9 @@ extension Int {
             noLevelLabel.sizeToFit()
             accessibilityValue = noLevelText
         }
+        
+        thunderImageView.isHidden = level != .charingBattery
+        
         levelFill.frame = levelFrame.integral
         layoutCornerRadius()
         layoutFillColor()
@@ -178,6 +195,8 @@ extension Int {
     private func layoutFillColor() {
         levelFill.backgroundColor = currentFillColor.cgColor
         switch level {
+        case .charingBattery:
+            terminalOpening.backgroundColor = chargeFillColor.cgColor
         case .fullBattery:
             terminalOpening.backgroundColor = currentFillColor.cgColor
         case 0 ..< .fullBattery:

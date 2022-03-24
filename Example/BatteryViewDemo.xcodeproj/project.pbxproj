@@ -3,27 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA006B6B27DC5414002103CC /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA006B6A27DC5414002103CC /* BatteryView.swift */; };
+		BAED97F727DCD1E800ADF411 /* BatteryView in Frameworks */ = {isa = PBXBuildFile; productRef = BAED97F627DCD1E800ADF411 /* BatteryView */; };
 		DCBCBEF21DEC700D00844FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBCBEF11DEC700D00844FCB /* AppDelegate.swift */; };
 		DCBCBEF71DEC700D00844FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBCBEF51DEC700D00844FCB /* Main.storyboard */; };
-		DCBCBEF91DEC700D00844FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBCBEF81DEC700D00844FCB /* Assets.xcassets */; };
 		DCBCBEFC1DEC700D00844FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBCBEFA1DEC700D00844FCB /* LaunchScreen.storyboard */; };
-		DCBCBF041DEC70DD00844FCB /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBCBF031DEC70DD00844FCB /* BatteryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA006B6A27DC5414002103CC /* BatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryView.swift; path = ../Sources/BatteryView/BatteryView.swift; sourceTree = "<group>"; };
+		BAC777CA27DC34AB005FAC4B /* BatteryView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BatteryView; path = ..; sourceTree = "<group>"; };
 		DC26956C229E73B200821568 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		DC26956D229E73B200821568 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DCBCBEEE1DEC700D00844FCB /* BatteryViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBCBEF11DEC700D00844FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCBCBEF61DEC700D00844FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DCBCBEF81DEC700D00844FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCBCBEFB1DEC700D00844FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCBCBEFD1DEC700D00844FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCBCBF031DEC70DD00844FCB /* BatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryView.swift; path = ../Sources/BatteryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAED97F727DCD1E800ADF411 /* BatteryView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,9 +41,10 @@
 		DCBCBEE51DEC700D00844FCB = {
 			isa = PBXGroup;
 			children = (
+				BAC777CA27DC34AB005FAC4B /* BatteryView */,
 				DC26956C229E73B200821568 /* CHANGELOG.md */,
 				DC26956D229E73B200821568 /* README.md */,
-				DCBCBF031DEC70DD00844FCB /* BatteryView.swift */,
+				BA006B6A27DC5414002103CC /* BatteryView.swift */,
 				DCBCBEF01DEC700D00844FCB /* BatteryViewDemo */,
 				DCBCBEEF1DEC700D00844FCB /* Products */,
 			);
@@ -61,7 +63,6 @@
 			children = (
 				DCBCBEF11DEC700D00844FCB /* AppDelegate.swift */,
 				DCBCBEF51DEC700D00844FCB /* Main.storyboard */,
-				DCBCBEF81DEC700D00844FCB /* Assets.xcassets */,
 				DCBCBEFA1DEC700D00844FCB /* LaunchScreen.storyboard */,
 				DCBCBEFD1DEC700D00844FCB /* Info.plist */,
 			);
@@ -86,6 +87,9 @@
 			dependencies = (
 			);
 			name = BatteryViewDemo;
+			packageProductDependencies = (
+				BAED97F627DCD1E800ADF411 /* BatteryView */,
+			);
 			productName = BatteryViewDemo;
 			productReference = DCBCBEEE1DEC700D00844FCB /* BatteryViewDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +120,9 @@
 				Base,
 			);
 			mainGroup = DCBCBEE51DEC700D00844FCB;
+			packageReferences = (
+				BAED97F527DCD1E800ADF411 /* XCRemoteSwiftPackageReference "BatteryView" */,
+			);
 			productRefGroup = DCBCBEEF1DEC700D00844FCB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCBCBEFC1DEC700D00844FCB /* LaunchScreen.storyboard in Resources */,
-				DCBCBEF91DEC700D00844FCB /* Assets.xcassets in Resources */,
 				DCBCBEF71DEC700D00844FCB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCBCBF041DEC70DD00844FCB /* BatteryView.swift in Sources */,
+				BA006B6B27DC5414002103CC /* BatteryView.swift in Sources */,
 				DCBCBEF21DEC700D00844FCB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +312,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,7 +326,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BatteryViewDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.roysharon.BatteryViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -330,7 +340,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BatteryViewDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.roysharon.BatteryViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAED97F527DCD1E800ADF411 /* XCRemoteSwiftPackageReference "BatteryView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yonat/BatteryView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAED97F627DCD1E800ADF411 /* BatteryView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAED97F527DCD1E800ADF411 /* XCRemoteSwiftPackageReference "BatteryView" */;
+			productName = BatteryView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DCBCBEE61DEC700D00844FCB /* Project object */;
 }
